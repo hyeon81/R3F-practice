@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { OrbitControls, useTexture } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { useControls } from "leva";
 
@@ -16,7 +16,6 @@ const MyElement3D = () => {
     mesh2.current.material = mesh1.current.material;
   }, []);
 
-  const mapcap = useTexture("./matcap.png");
   return (
     <>
       <OrbitControls />
@@ -25,7 +24,7 @@ const MyElement3D = () => {
       <directionalLight position={[1, 2, 8]} intensity={0.7} />
       <mesh position={[0.7, 0, 0]} ref={mesh1}>
         <torusKnotGeometry args={[0.5, 0.2, 100, 16]} />
-        <meshNormalMaterial />
+        <meshDepthMaterial />
       </mesh>
       <mesh position={[-0.7, 0, 0]} ref={mesh2}>
         <torusGeometry args={[0.5, 0.2]} />

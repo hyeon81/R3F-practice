@@ -25,7 +25,7 @@ const MyElement3D = () => {
       <directionalLight position={[1, 2, 8]} intensity={0.7} />
       <mesh position={[0.7, 0, 0]} ref={mesh1}>
         <torusKnotGeometry args={[0.5, 0.2, 100, 16]} />
-        <meshNormalMaterial />
+        <meshMatcapMaterial matcap={mapcap} flatShading />
       </mesh>
       <mesh position={[-0.7, 0, 0]} ref={mesh2}>
         <torusGeometry args={[0.5, 0.2]} />
